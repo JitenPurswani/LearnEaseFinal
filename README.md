@@ -25,7 +25,19 @@ Update the IP address to your current machine's IP in the following files:
 
 Look for any `http://<IP>:<port>` entries and replace `<IP>` with your machine’s current IP address (you can get this using `ipconfig` or `ifconfig`).
 
-### 3. Install Python Dependencies
+### 3. Update Local Model Path
+
+Update the **local file folder path** for the `mcq_t5_finetuned1` directory in the following file:
+
+- `\LearnEase\backend\models\quiz.py`
+
+Look for the code where the model path is defined and update it to point to the correct location of the downloaded `model.safetensors` file. For example:
+
+```python
+# Example in quiz.py
+model_path = "./mcq_t5_finetuned1"
+```
+### 4. Install Python Dependencies
 
 In the project root or backend directory, install all backend requirements using:
 
@@ -33,7 +45,7 @@ In the project root or backend directory, install all backend requirements using
 pip install -r requirements.txt
 ```
 
-### 4. Run the Project
+### 5. Run the Project
 ## Get started (Original Expo Setup)
 
 1. Install dependencies (In thr root directory as well as backend folder)
@@ -76,16 +88,6 @@ In the output, you'll find options to open the app in a
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
 ---
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
 ---
 
